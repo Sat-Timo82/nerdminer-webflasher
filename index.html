@@ -204,6 +204,11 @@ footer b{color:var(--red);}
           <div class="flash-zone-sub">LilyGO T-Dongle S3 · v1.8.3 Beta</div>
           <button class="nmf-btn" data-bin="nerdminer-usb.bin" data-chip="ESP32-S3" data-kind="nm">USB-NerdMiner installieren</button>
         </div>
+        <div class="flash-zone">
+          <div class="flash-zone-title">BitForge Nano 2,8"-Display</div>
+          <div class="flash-zone-sub">ESP32-2432S028R · zeigt Hashrate, Chance, Bitcoin-Preis und Blockinfo deines BitForge Nano (Leistungsstufen Öko · Normal · Power) · v1.0 Beta</div>
+          <button class="nmf-btn" data-bin="bitforge-nano-display.bin" data-chip="ESP32" data-kind="bf">BitForge Nano Display installieren</button>
+        </div>
       </div>
       <div class="flash-note">Nach dem Aufspielen erscheint das WLAN <strong>NerdMinerAP</strong> (Passwort <strong>MineYourCoins</strong>):
         WLAN und BTC-Adresse mit Namen eintragen, z. B. <strong>bc1q….Wohnzimmer</strong> – Pool.Nerdminer.de ist voreingestellt.<br>
@@ -320,7 +325,7 @@ import { ESPLoader, Transport } from "./esptool-0.4.5.js";
 // Eigener Ablauf statt ESP Web Tools: deutsche Fenster und echtes Update.
 // Update = alles außer dem Einstellungsbereich (NVS): WLAN, BTC-Adresse und Pool bleiben erhalten.
 // Neu einrichten = ganzen Speicher löschen, dann komplett aufspielen (Pool.Nerdminer.de voreingestellt).
-const NVS = { nm: [0x9000, 0xE000], bx: [0x9000, 0xF000], nx: [0x9000, 0xF000] };
+const NVS = { nm: [0x9000, 0xE000], bf: [0x9000, 0xE000], bx: [0x9000, 0xF000], nx: [0x9000, 0xF000] };
 const dlg = document.getElementById("dlg"), box = document.getElementById("dlg-box");
 let busy = false;
 const show = h => { box.innerHTML = h; dlg.classList.add("on"); };
@@ -411,6 +416,7 @@ async function start(btn) {
     ? "Dein Miner startet neu und läuft mit deinen bisherigen Einstellungen weiter."
     : (kind === "nx" ? "Dein Miner startet neu. Verbinde dich mit dem WLAN <b>NerdAxe_…</b> und trage dein WLAN und deine BTC-Adresse ein."
                      : kind === "bx" ? "Dein Miner startet neu. Verbinde dich mit dem WLAN <b>Bitaxe_…</b> und trage dein WLAN und deine BTC-Adresse ein."
+                     : kind === "bf" ? "Dein Display startet neu. Verbinde dich mit dem WLAN <b>BitForge-Display</b> und trage dein WLAN ein."
                      : "Dein Miner startet neu. Verbinde dich mit dem WLAN <b>NerdMinerAP</b> (Passwort <b>MineYourCoins</b>) und trage dein WLAN und deine BTC-Adresse ein.");
   show(`<div class="dlg-ok">✓</div><h3>Fertig!</h3><p>${next}</p><p>Startet er nicht von selbst: USB-Kabel kurz ab- und wieder anstecken.</p>
     <div class="dlg-act"><button class="main" id="d-x">Schließen</button></div>`);
