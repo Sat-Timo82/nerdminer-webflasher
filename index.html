@@ -150,6 +150,7 @@ footer b{color:var(--red);}
   footer{flex-direction:column;gap:12px;text-align:center;}
 }
 </style>
+<script type="module" src="https://unpkg.com/esp-web-tools@10.4.0/dist/web/install-button.js?module"></script>
 </head>
 <body>
 
@@ -189,12 +190,12 @@ footer b{color:var(--red);}
       <div class="version-badge"><div class="version-dot"></div>v3.1.46</div>
     </div>
     <div class="flash-card-body">
-      <div class="info-grid" style="margin-bottom:0">
+      <div class="info-grid" style="margin-bottom:0;grid-template-columns:1fr">
         <div class="flash-zone" id="nerdclock">
           <div class="flash-zone-title">NerdClock</div>
           <div class="flash-zone-sub">Die aktuelle NerdClock-Software · v3.1.46</div>
           <esp-web-install-button manifest="manifest-premium.json">
-            <button slot="activate">NerdClock installieren</button>
+            <button slot="activate" class="nmf-btn">NerdClock installieren</button>
             <span slot="unsupported">Dein Browser unterstützt das nicht – bitte <b>Chrome</b> oder <b>Edge</b> am Computer verwenden.</span>
             <span slot="not-allowed">Bitte die Seite über https öffnen.</span>
           </esp-web-install-button>
