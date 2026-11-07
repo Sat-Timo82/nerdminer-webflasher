@@ -162,10 +162,11 @@ footer b{color:var(--red);}
 <div class="hero">
   <div class="hero-eyebrow">We do Bitcoin</div>
   <h1 class="hero-title"><span class="nc"><img src="icon.png" alt="N">erd<em>miner</em>.de</span><br>Webflasher</h1>
-  <p class="hero-sub">Software für deinen NerdMiner und Bitaxe direkt aus dem Browser aufspielen –
+  <p class="hero-sub">Software für deine NerdClock, deinen NerdMiner und Bitaxe direkt aus dem Browser aufspielen –
      ohne Download, ohne Programme. Pool.Nerdminer.de ist schon voreingestellt.</p>
   <div class="hero-chips">
     <div class="chip"><div class="chip-dot"></div>Chrome, Edge &amp; Brave</div>
+    <div class="chip">NerdClock</div>
     <div class="chip">NerdMiner 1,9"</div>
     <div class="chip">NerdMiner 2,8"</div>
     <div class="chip">NerdMiner USB</div>
@@ -180,6 +181,29 @@ footer b{color:var(--red);}
     <strong>Bitte Chrome, Edge oder Brave am Computer verwenden.</strong>
     Safari, Firefox und Handys unterstützen das Flashen über USB nicht.
     <a href="https://www.google.com/chrome/" target="_blank">Chrome herunterladen →</a>
+  </div>
+
+  <div class="flash-card">
+    <div class="flash-card-header">
+      <div class="flash-card-title">NerdClock installieren</div>
+      <div class="version-badge"><div class="version-dot"></div>v3.1.46</div>
+    </div>
+    <div class="flash-card-body">
+      <div class="info-grid" style="margin-bottom:0">
+        <div class="flash-zone" id="nerdclock">
+          <div class="flash-zone-title">NerdClock</div>
+          <div class="flash-zone-sub">Die aktuelle NerdClock-Software · v3.1.46</div>
+          <esp-web-install-button manifest="manifest-premium.json">
+            <button slot="activate">NerdClock installieren</button>
+            <span slot="unsupported">Dein Browser unterstützt das nicht – bitte <b>Chrome</b> oder <b>Edge</b> am Computer verwenden.</span>
+            <span slot="not-allowed">Bitte die Seite über https öffnen.</span>
+          </esp-web-install-button>
+        </div>
+      </div>
+      <div class="flash-note">NerdClock per USB-C (Buchse „UART“) an den Computer anschließen, das Gerät heißt meist „USB-SERIAL CH340“.
+        Bei „Gerät löschen?“ <strong>Ja</strong> wählen.<br>
+        Danach startet die NerdClock neu und führt am Display durch Sprache, WLAN, Währung und Miner.</div>
+    </div>
   </div>
 
   <div class="flash-card">
