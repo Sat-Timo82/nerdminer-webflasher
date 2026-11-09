@@ -272,7 +272,7 @@ footer b{color:var(--red);}
         </div>
       </div>
       <div class="flash-note">Nach dem Aufspielen erscheint das WLAN <strong>NerdHeizungAP</strong> (Passwort <strong>nerdheizung</strong>):
-        WLAN, Miner und Heizstufen eintragen – der Miner muss vorher im Netzwerk sein (LAN-Kabel oder WLAN-Bridge).<br>
+        WLAN, Pool und Benutzer eintragen (Miner-IP leer lassen) – der Miner muss vorher im Netzwerk sein (LAN-Kabel oder WLAN-Bridge).<br>
         Alles zurücksetzen: Taste <strong>BOOT</strong> (Knopf 1) am Display 5 Sekunden gedrückt halten.<br>Schon eingerichtet? Wähle beim Installieren <strong>Update</strong> – dann bleiben WLAN und Einstellungen erhalten.</div>
     </div>
   </div>
@@ -485,7 +485,7 @@ async function start(btn) {
     : (kind === "nx" ? "Dein Miner startet neu. Verbinde dich mit dem WLAN <b>NerdAxe_…</b> und trage dein WLAN und deine BTC-Adresse ein."
                      : kind === "bx" ? "Dein Miner startet neu. Verbinde dich mit dem WLAN <b>Bitaxe_…</b> und trage dein WLAN und deine BTC-Adresse ein."
                      : kind === "bn" ? "Dein Nano startet neu. Verbinde dich mit seinem WLAN-Zugang (Hotspot) und trage dein WLAN ein. Nach dem Speichern des WLANs den <b>Restart</b>-Knopf oben rechts drücken." : kind === "bf" ? "Dein Display startet neu. Verbinde dich mit dem WLAN <b>BitForge-Display</b> und trage dein WLAN ein."
-                     : kind === "hz" ? "Dein Display startet neu. Verbinde dich mit dem WLAN <b>NerdHeizungAP</b> (Passwort <b>nerdheizung</b>) und trage WLAN, Miner und Heizstufen ein."
+                     : kind === "hz" ? "Dein Display startet neu. Verbinde dich mit dem WLAN <b>NerdHeizungAP</b> (Passwort <b>nerdheizung</b>) und trage dein WLAN, Pool und Benutzer ein. Falsches WLAN? BOOT 5 Sekunden halten."
                      : "Dein Miner startet neu. Verbinde dich mit dem WLAN <b>NerdMinerAP</b> (Passwort <b>MineYourCoins</b>) und trage dein WLAN und deine BTC-Adresse ein.");
   show(`<div class="dlg-ok">✓</div><h3>Fertig!</h3><p>${next}</p><p>Startet er nicht von selbst: USB-Kabel kurz ab- und wieder anstecken.</p>
     <div class="dlg-act"><button class="main" id="d-x">Schließen</button></div>`);
