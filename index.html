@@ -249,7 +249,7 @@ footer b{color:var(--red);}
       </div>
       <div class="flash-note">Nach dem Aufspielen erscheint das WLAN <strong>NerdMinerAP</strong> (Passwort <strong>MineYourCoins</strong>):
         WLAN und BTC-Adresse mit Namen eintragen, z. B. <strong>bc1q….Wohnzimmer</strong> – Pool.Nerdminer.de ist voreingestellt.<br>
-        2,8": Farben falsch? In der Einrichtung den Haken „Invert Display Colors“ setzen.<br>Schon eingerichtet? Wähle beim Installieren <strong>Update</strong> – dann bleiben WLAN und BTC-Adresse erhalten.<br><strong>BitForge Nano Miner:</strong> Nano per USB-C anschließen. Nach dem Aufspielen: im Nano-Menü bzw. über seinen WLAN-Zugang (Hotspot) dein WLAN einrichten und die BTC-Adresse eintragen. Nach dem Speichern des WLANs den <strong>Restart</strong>-Knopf oben rechts drücken. Einstellungen des Nano gehen bei der Installation verloren.</div>
+        2,8": Farben falsch? In der Einrichtung den Haken „Invert Display Colors“ setzen.<br>Schon eingerichtet? Wähle beim Installieren <strong>Update</strong> – dann bleiben WLAN und BTC-Adresse erhalten.<br><strong>BitForge Nano Miner:</strong> Nano per USB-C anschließen. Nach dem Aufspielen: über seinen WLAN-Zugang (Hotspot) mit der <strong>Lupe</strong> dein WLAN wählen, Passwort eingeben und speichern. Dann den <strong>Restart</strong>-Knopf oben rechts drücken. Danach das Dashboard über die IP-Adresse öffnen und unter <strong>Einstellungen</strong> die BTC-Adresse eintragen. Einstellungen des Nano gehen bei der Installation verloren.</div>
     </div>
   </div>
 
@@ -300,9 +300,7 @@ footer b{color:var(--red);}
           <button class="nmf-btn" data-bin="bitaxe-603-gross.bin" data-chip="ESP32-S3" data-kind="bx">603 großes Display installieren</button>
         </div>
       </div>
-      <div class="flash-note">Nach dem Aufspielen erscheint das WLAN <strong>Bitaxe_…</strong>: dort <strong>dein WLAN</strong> und
-        <strong>deine BTC-Adresse</strong> eintragen (Felder „mein WLAN“ und „meine BTC-Adresse“ ersetzen). Primary und Secondary Pool sind
-        auf Pool.Nerdminer.de voreingestellt. Updates bitte immer hier über den Webflasher, nicht über das Dashboard. Beim Installieren <strong>Update</strong> wählen – dann bleiben deine Einstellungen erhalten.</div>
+      <div class="flash-note">Nach dem Aufspielen erscheint das WLAN <strong>Bitaxe_…</strong>: Verbinde dich damit, tippe auf die <strong>Lupe</strong>, wähle <strong>dein WLAN</strong>, gib das WLAN-Passwort ein, speichere und starte neu (<strong>Restart</strong>). Danach erreichst du das Dashboard über die <strong>IP-Adresse</strong> des Miners (steht im Router). Dort unter <strong>Einstellungen</strong> trägst du <strong>deine BTC-Adresse</strong> ein (Feld „meine BTC-Adresse“ ersetzen) und kannst den Pool ändern. Primary und Secondary Pool sind auf Pool.Nerdminer.de voreingestellt. Updates bitte immer hier über den Webflasher, nicht über das Dashboard. Beim Installieren <strong>Update</strong> wählen – dann bleiben deine Einstellungen erhalten.</div>
     </div>
   </div>
 
@@ -329,9 +327,7 @@ footer b{color:var(--red);}
           <button class="nmf-btn" data-bin="nerdqaxe-plus.bin" data-chip="ESP32-S3" data-kind="nx">NerdQAxe++ installieren</button>
         </div>
       </div>
-      <div class="flash-note">Nach dem Aufspielen erscheint das WLAN <strong>NerdAxe_…</strong>: dort <strong>dein WLAN</strong> und
-        <strong>deine BTC-Adresse</strong> eintragen (Felder „mein WLAN“ und „meine BTC-Adresse“ ersetzen). Primary und Fallback Pool sind
-        auf Pool.Nerdminer.de voreingestellt. Beim Installieren <strong>Update</strong> wählen – dann bleiben deine Einstellungen erhalten.</div>
+      <div class="flash-note">Nach dem Aufspielen erscheint das WLAN <strong>NerdAxe_…</strong>: Verbinde dich damit, tippe auf die <strong>Lupe</strong>, wähle <strong>dein WLAN</strong>, gib das WLAN-Passwort ein, speichere und starte neu (<strong>Restart</strong>). Danach erreichst du das Dashboard über die <strong>IP-Adresse</strong> des Miners (steht im Router). Dort unter <strong>Einstellungen</strong> trägst du <strong>deine BTC-Adresse</strong> ein (Feld „meine BTC-Adresse“ ersetzen) und kannst den Pool ändern. Primary und Fallback Pool sind auf Pool.Nerdminer.de voreingestellt. Beim Installieren <strong>Update</strong> wählen – dann bleiben deine Einstellungen erhalten.</div>
     </div>
   </div>
 
@@ -361,7 +357,7 @@ footer b{color:var(--red);}
       <div class="info-row"><span class="info-key">1.</span><span class="info-val">Miner per USB-Datenkabel an den Computer</span></div>
       <div class="info-row"><span class="info-key">2.</span><span class="info-val">Gerät oben wählen, „installieren“ tippen</span></div>
       <div class="info-row"><span class="info-key">3.</span><span class="info-val">Anschluss (COM-Port) auswählen</span></div>
-      <div class="info-row"><span class="info-key">4.</span><span class="info-val">WLAN und BTC-Adresse am Miner eintragen</span></div>
+      <div class="info-row"><span class="info-key">4.</span><span class="info-val">WLAN am Miner eintragen – NerdMiner: gleich mit BTC-Adresse. Bitaxe, NerdAxe, Nano: BTC-Adresse danach im Dashboard unter Einstellungen</span></div>
     </div>
     <div class="info-card">
       <h4>Hilfe</h4>
@@ -482,9 +478,9 @@ async function start(btn) {
   busy = false;
   const next = mode === "up"
     ? "Dein Miner startet neu und läuft mit deinen bisherigen Einstellungen weiter."
-    : (kind === "nx" ? "Dein Miner startet neu. Verbinde dich mit dem WLAN <b>NerdAxe_…</b> und trage dein WLAN und deine BTC-Adresse ein."
-                     : kind === "bx" ? "Dein Miner startet neu. Verbinde dich mit dem WLAN <b>Bitaxe_…</b> und trage dein WLAN und deine BTC-Adresse ein."
-                     : kind === "bn" ? "Dein Nano startet neu. Verbinde dich mit seinem WLAN-Zugang (Hotspot) und trage dein WLAN ein. Nach dem Speichern des WLANs den <b>Restart</b>-Knopf oben rechts drücken." : kind === "bf" ? "Dein Display startet neu. Verbinde dich mit dem WLAN <b>BitForge-Display</b> und trage dein WLAN ein."
+    : (kind === "nx" ? "Dein Miner startet neu. Verbinde dich mit dem WLAN <b>NerdAxe_…</b>, tippe auf die <b>Lupe</b>, wähle dein WLAN, gib das Passwort ein, speichere und starte neu (Restart). Danach öffnest du das Dashboard über die IP-Adresse des Miners und trägst unter <b>Einstellungen</b> deine BTC-Adresse ein."
+                     : kind === "bx" ? "Dein Miner startet neu. Verbinde dich mit dem WLAN <b>Bitaxe_…</b>, tippe auf die <b>Lupe</b>, wähle dein WLAN, gib das Passwort ein, speichere und starte neu (Restart). Danach öffnest du das Dashboard über die IP-Adresse des Miners und trägst unter <b>Einstellungen</b> deine BTC-Adresse ein."
+                     : kind === "bn" ? "Dein Nano startet neu. Verbinde dich mit seinem WLAN-Zugang (Hotspot), tippe auf die <b>Lupe</b>, wähle dein WLAN, gib das Passwort ein und speichere. Dann den <b>Restart</b>-Knopf oben rechts drücken. Danach öffnest du das Dashboard über die IP-Adresse des Nanos und trägst unter <b>Einstellungen</b> deine BTC-Adresse ein." : kind === "bf" ? "Dein Display startet neu. Verbinde dich mit dem WLAN <b>BitForge-Display</b> und trage dein WLAN ein."
                      : kind === "hz" ? "Dein Display startet neu. Verbinde dich mit dem WLAN <b>NerdHeizungAP</b> (Passwort <b>nerdheizung</b>) und trage dein WLAN, Pool und Benutzer ein. Falsches WLAN? BOOT 5 Sekunden halten."
                      : "Dein Miner startet neu. Verbinde dich mit dem WLAN <b>NerdMinerAP</b> (Passwort <b>MineYourCoins</b>) und trage dein WLAN und deine BTC-Adresse ein.");
   show(`<div class="dlg-ok">✓</div><h3>Fertig!</h3><p>${next}</p><p>Startet er nicht von selbst: USB-Kabel kurz ab- und wieder anstecken.</p>
